@@ -1,12 +1,12 @@
-## REPORT: indizes
+# REPORT: indizes
 
-# python code erstellen:
+## python code erstellen:
 
 Mit der Hilfe einer for-Schleife und der Faker-Bibliothek 
 konnte ich die 500k Daten in eine names.db
 Datei einbauen.
 
-# Gleichverteilung:
+## Gleichverteilung:
 
 Die relative Verteilung (ohne index) sieht so aus: 
 
@@ -23,7 +23,7 @@ Run Time: real 0.216 user 0.206787 sys 0.009762
 
 **Im ganzen Datensatzt (bis auf Nikola) bewegt sich zwischen 20 und 10 prozent)**
 
-# Performance ohne Index:
+## Performance ohne Index:
 
 SELECT *
 FROM personen
@@ -33,7 +33,7 @@ WHERE vorname = "Anna";
 
 Run Time: real 0.034 user 0.030708 sys 0.004010
 
-# Performance mit Index:
+## Performance mit Index:
 
 
 878
@@ -42,7 +42,7 @@ Run Time: real 0.000 user 0.000237 sys 0.000237
 **Die Zeit ist um einiges schneller seitdem ich einen Index benutze.**
 
 
-# Verteilung 50%
+## Verteilung 50%
 
 Hauns         249999
 Nikola        882   
@@ -55,7 +55,7 @@ Carlo         496
 **Die Verteilung ist relativ gleich (bis auf die Hälfte der Daten) und bewegt sich pro Vornamen zwischen 500 und 400 gleichen Namen.
 Also der Bias ist auf jeden Fall sichtbar.**
 
-# Streuung 50%
+## Streuung 50%
 
 minimum  maximum  differenz  relative_differenz_prozent
 -------  -------  ---------  --------------------------
@@ -63,7 +63,7 @@ minimum  maximum  differenz  relative_differenz_prozent
 
 Run Time: real 0.279 user 0.268636 sys 0.010487
 
-# Index mit Bias
+## Index mit Bias
 
 SELECT COUNT(*)
 FROM personen     
