@@ -7,14 +7,17 @@ c = conn.cursor()
 
 names = []
 
-for i in range (1, 250001):
+for i in range (1, 500001):
     vorname = fake.first_name()
     nachname = fake.last_name()
     names.append((i, vorname, nachname))
+
+"""
 for i in range (250002, 500001):
     vorname = "Hauns"
     nachname = "Földbocha"
     names.append((i, vorname, nachname))
+"""
 
 
 c.execute(
@@ -68,4 +71,21 @@ FROM werte
 ORDER BY ABS(prozent - erwartet) DESC;
 
 ////
+#Streuung MIN und MAX
 
+WITH verteilung AS (
+    SELECT vorname, COUNT(*) AS anzahl
+    FROM personen
+    GROUP BY vorname
+)
+SELECT
+    MIN(anzahl) AS minimum,
+    MAX(anzahl) AS maximum,
+    MAX(anzahl) - MIN(anzahl) AS differenz,
+    ROUND(
+        100.0 * (MAX(anzahl) - MIN(anzahl)) / AVG(anzahl),
+        2
+    ) AS relative_differenz_prozent
+FROM verteilung;
+
+"""

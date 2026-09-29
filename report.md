@@ -6,6 +6,34 @@ Mit der Hilfe einer for-Schleife und der Faker-Bibliothek
 konnte ich die 500k Daten in eine names.db
 Datei einbauen.
 
+# Gleichverteilung:
+
+Die relative Verteilung (ohne index) sieht so aus: 
+
+vorname       anzahl  prozent
+------------  ------  -------
+Nikola        1818    0.36   
+Karina        997     0.2    
+Nathalie      981     0.2    
+Stephanie     970     0.19   
+Kristina      968     0.19   
+Rene          964     0.19   
+Run Time: real 0.216 user 0.206787 sys 0.009762
+
+
+Im ganzen Datensatzt (bis auf Nikola) bewegt sich zwischen 20 und 10 prozent)
+
+# Performance ohne Index:
+
+SELECT *
+FROM personen
+WHERE vorname = "Anna";
+Run Time: real 0.034 user 0.030708 sys 0.004010
+
+# Performance mit Index:
+
+
+
 # Verteilung 50%
 
 Hauns         249999
