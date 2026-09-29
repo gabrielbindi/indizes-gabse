@@ -17,3 +17,9 @@ Carlo         496
 ...
 
 Die Verteilung ist relativ gleich (bis auf die Hälfte der Daten) und bewegt sich pro Vornamen zwischen 500 und 400 gleichen Namen.
+
+# Streuung 50%
+
+minimum  maximum  differenz  relative_differenz_prozent
+-------  -------  ---------  --------------------------
+379      249999   249620     27957.5
