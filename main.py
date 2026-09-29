@@ -6,9 +6,14 @@ conn = sqlite3.connect("names.db")
 c = conn.cursor()
 
 names = []
-for i in range (1, 500001):
+
+for i in range (1, 250001):
     vorname = fake.first_name()
     nachname = fake.last_name()
+    names.append((i, vorname, nachname))
+for i in range (250001, 500000):
+    vorname = "Hauns"
+    nachname = "Földbocha"
     names.append((i, vorname, nachname))
 
 
