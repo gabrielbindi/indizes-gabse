@@ -28,10 +28,18 @@ Im ganzen Datensatzt (bis auf Nikola) bewegt sich zwischen 20 und 10 prozent)
 SELECT *
 FROM personen
 WHERE vorname = "Anna";
+
+878
+
 Run Time: real 0.034 user 0.030708 sys 0.004010
 
 # Performance mit Index:
 
+
+878
+Run Time: real 0.000 user 0.000237 sys 0.000237
+
+Die Zeit ist um einiges schneller seitdem ich einen Index benutze.
 
 
 # Verteilung 50%
@@ -45,6 +53,7 @@ Carlo         496
 ...
 
 Die Verteilung ist relativ gleich (bis auf die Hälfte der Daten) und bewegt sich pro Vornamen zwischen 500 und 400 gleichen Namen.
+Also der Bias ist auf jeden Fall sichtbar.
 
 # Streuung 50%
 
